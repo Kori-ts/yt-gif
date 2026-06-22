@@ -69,6 +69,38 @@ nfpms:
 checksum:
   name_template: checksums.txt
 
+winget:
+  - name: yt-gif
+    publisher: Kori
+    short_description: Create GIFs from YouTube videos.
+    license: MIT
+    publisher_url: https://github.com/Kori-ts
+    publisher_support_url: https://github.com/Kori-ts/yt-gif/issues/new
+    package_identifier: Kori.YTGIF
+    package_name: yt-gif
+    ids:
+      - archives
+    homepage: https://github.com/Kori-ts/yt-gif
+    description: yt-gif is a simple CLI tool for creating GIFs from YouTube videos.
+    license_url: https://github.com/Kori-ts/yt-gif/blob/main/LICENSE
+    copyright: Copyright (c) 2026 Kori
+    tags:
+      - youtube
+      - gif
+      - cli
+    repository:
+      owner: Kori-ts
+      name: winget-pkgs
+      branch: yt-gif-{{ .Version }}
+      token: "{{ .Env.PACKAGE_PUBLISH_TOKEN }}"
+      pull_request:
+        enabled: true
+        draft: false
+        base:
+          owner: microsoft
+          name: winget-pkgs
+          branch: master
+
 release:
   github:
     owner: Kori-ts
