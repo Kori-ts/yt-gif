@@ -14,6 +14,12 @@ If you have Go installed on your machine:
 go install github.com/Kori-ts/yt-gif@latest
 ```
 
+Linux/MacOS with Homebrew:
+```text
+brew tap Kori-ts/yt-gif
+brew install yt-gif
+```
+
 Check dependencies:
 ```text
 yt-gif check
