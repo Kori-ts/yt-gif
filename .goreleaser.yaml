@@ -1,0 +1,75 @@
+version: 2
+
+project_name: yt-gif
+
+before:
+  hooks:
+    - go test ./...
+
+builds:
+  - id: yt-gif
+    binary: yt-gif
+    main: .
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - linux
+      - darwin
+      - windows
+    goarch:
+      - amd64
+      - arm64
+    flags:
+      - -buildvcs=false
+    ldflags:
+      - -s -w
+
+archives:
+  - id: binaries
+    ids:
+      - yt-gif
+    name_template: >-
+      {{ .ProjectName }}_
+      {{- .Os }}_
+      {{- .Arch }}
+    formats:
+      - binary
+
+  - id: archives
+    ids:
+      - yt-gif
+    name_template: >-
+      {{ .ProjectName }}_
+      {{- .Version }}_
+      {{- .Os }}_
+      {{- .Arch }}
+    formats:
+      - tar.gz
+    format_overrides:
+      - goos: windows
+        formats:
+          - zip
+
+nfpms:
+  - id: linux_packages
+    ids:
+      - yt-gif
+    package_name: yt-gif
+    vendor: Kori
+    homepage: https://github.com/Kori-ts/yt-gif
+    maintainer: Kori
+    description: Create GIFs from YouTube videos.
+    license: MIT
+    bindir: /usr/bin
+    formats:
+      - deb
+      - rpm
+      - apk
+
+checksum:
+  name_template: checksums.txt
+
+release:
+  github:
+    owner: Kori-ts
+    name: yt-gif
