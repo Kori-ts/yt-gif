@@ -14,16 +14,16 @@ Usage:
   yt-gif <url> <start-end>... [options]
 
 Options:
-  --out <dir>          output directory. Defaults to the current directory.
-  --force              overwrite existing clip-{n}.gif files.
-  --jobs <n>           parallel jobs. Defaults to 2.
+  --out <dir>          Output directory. Defaults to the current directory.
+  --force              Overwrite existing clip-{n}.gif files.
+  --jobs <n>           Parallel jobs. Defaults to 2.
   --fps <n|source>     GIF framerate. Must be a numeric value in the range 1-60. Defaults to 15.
-  --width <px|source>  output width. Use source to leave width unconstrained. Defaults to 640.
-  --height <px|source> output height. Use source to leave height unconstrained.
-  --timing             show download, conversion, and total elapsed times.
-  --accurate-cut       force exact section cuts in yt-dlp. Slower.
-  --verbose            show yt-dlp and ffmpeg output with job prefixes.
-  --help               show this help.
+  --width <px|source>  Output width. Use source to leave width unconstrained. Defaults to 640.
+  --height <px|source> Output height. Use source to leave height unconstrained.
+  --timing             Show download, conversion, and total elapsed times.
+  --accurate-cut       Force exact section cuts in yt-dlp. Slower.
+  --verbose            Show yt-dlp and ffmpeg output with job prefixes.
+  --help               Display usage information.
 `
 
 func main() {

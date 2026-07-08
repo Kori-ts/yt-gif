@@ -7,17 +7,21 @@
 - [yt-dlp](https://github.com/yt-dlp/yt-dlp) in `PATH`
 - [ffmpeg](https://ffmpeg.org/) in `PATH`
 
-## Installation:
+## Installation
 
 If you have Go installed on your machine:
 ```text
 go install github.com/Kori-ts/yt-gif@latest
 ```
 
-Linux/MacOS with Homebrew:
+Windows with WinGet:
 ```text
-brew tap Kori-ts/yt-gif
-brew install yt-gif
+winget install Kori.YTGIF
+```
+
+Linux/macOS with Homebrew:
+```text
+brew install Kori-ts/yt-gif/yt-gif
 ```
 
 Check dependencies:
@@ -37,15 +41,16 @@ yt-gif https://www.youtube.com/watch?v=dQw4w9WgXcQ 0:00-0:07.364
 ```
 
 Options:
-- `--out <dir>`: output directory. Defaults to the current directory.
-- `--force`: overwrite existing `clip-{n}.gif` files.
-- `--jobs <n>`: parallel jobs. Defaults to `2`.
+- `--out <dir>`: Output directory. Defaults to the current directory.
+- `--force`: Overwrite existing `clip-{n}.gif` files.
+- `--jobs <n>`: Parallel jobs. Defaults to `2`.
 - `--fps <n|source>`: GIF framerate. Must be a numeric value in the range `1-60`. Defaults to `15`.
-- `--width <px|source>`: output width. Use `source` to leave width unconstrained. Defaults to `640`.
-- `--height <px|source>`: output height. Use `source` to leave height unconstrained.
-- `--timing`: show download, conversion, and total elapsed times.
-- `--accurate-cut`: force exact section cuts in `yt-dlp`. Slower.
-- `--verbose`: show `yt-dlp` and `ffmpeg` output with job prefixes.
+- `--width <px|source>`: Output width. Use `source` to leave width unconstrained. Defaults to `640`.
+- `--height <px|source>`: Output height. Use `source` to leave height unconstrained.
+- `--timing`: Show download, conversion, and total elapsed times.
+- `--accurate-cut`: Force exact section cuts in `yt-dlp`. Slower.
+- `--verbose`: Show `yt-dlp` and `ffmpeg` output with job prefixes.
+- `--help`: Display usage information.
 
 ## YouTube Precise Timestamp Userscript
 
